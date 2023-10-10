@@ -26,10 +26,10 @@ public class Account {
 
     // Withdraw money from account
     public boolean withdrawMoney(int amount) {
-        if (this.amount - amount <= 0) {
+        if (this.amount + amount <= 0) {
             this.amount = 0;
         } else {
-            this.amount -= amount;
+            this.amount += amount;
         }
         return true;
     }
