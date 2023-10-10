@@ -22,7 +22,8 @@ public class Output {
 
     }
 
-    public void showCoinflip() {
+    public void showCoinflip(Player player) {
+        System.out.println(player.getPlayerName() + " won the coinflip.");
 
     }
 
@@ -39,6 +40,10 @@ public class Output {
     }
 
     public void displayScoreboard() {
+
+    }
+
+    public void displayFieldText() {
 
     }
 
