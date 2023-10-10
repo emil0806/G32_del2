@@ -16,7 +16,6 @@ public class Account {
         } else {
             depositMoney(value);
         }
-
     }
 
     // Get amount in account
