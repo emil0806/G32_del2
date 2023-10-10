@@ -32,7 +32,8 @@ public class Output {
 
     }
 
-    public void sumDice() {
+    public void sumDice(Cup cup) {
+        System.out.println("The sum of the two dice: " + cup.getRollSum());
 
     }
 
