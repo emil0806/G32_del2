@@ -11,4 +11,20 @@ public class Game {
 
     private Scanner scanner = new java.util.Scanner(System.in);
 
+    public void startGame() {
+
+    }
+
+    public void playGame() {
+
+    }
+
+    public void playerTurn(Player player, Cup cup) {
+
+    }
+
+    public void extraTurn(Player player, Cup cup) {
+
+    }
+
 }
