@@ -37,7 +37,39 @@ public class Game {
     }
 
     public void playerTurn(Player player, Cup cup) {
+        cup.setRollSum();
 
+        // Printing value of each die and the sum
+        System.out.println("The sum of the two dice: " + cup.getRollSum());
+
+        /*
+         * Checking the sum and comparing
+         * Then calling the correct method to continue the game.
+         */
+        if (cup.getRollSum() == 2) {
+            doubleOnes(player);
+        } else if (cup.getDie1() == cup.getDie2()) {
+            extraTurn(player, cup);
+        } else {
+            player.setScore(cup.getRollSum());
+        }
+
+        // Display scoreboard
+        displayScoreboard();
+
+        // Store roll sum in last roll
+        player.setLastRoll(cup.getRollSum());
+
+        // Updating number of turns
+        turnCount++;
+
+        // Checking if there is a winner
+        if (cup.getDie1() == cup.getDie2()) {
+            if (player.getScore() >= 40) {
+                System.out.println("Congratz, " + player.getPlayerName() + " won the game!");
+                System.exit(0);
+            }
+        }
     }
 
     public void extraTurn(Player player, Cup cup) {
