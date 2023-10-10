@@ -6,6 +6,7 @@ public class Account {
 
     // Account constructor
     public Account() {
+        this.amount = 1000;
     }
 
     // Set amount in account

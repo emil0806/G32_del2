@@ -7,16 +7,18 @@ public class Output {
     private Scanner scanner = new java.util.Scanner(System.in);
 
     public void displayRules() {
+        System.out.println("Welcome to the best dice in the world!");
+        System.out.println("");
         System.out.println("You need to get over 3000 in your balance to win the game");
         System.out.println("If you get the sum 10, you lose 80 in your balance, but get an extra turn");
         System.out.println("You start with a balance of 1000");
 
-    }
-
-    public void enterPlayerName(Player player) {
         System.out.println("Press ENTER to start the game");
         scanner.nextLine();
 
+    }
+
+    public void enterPlayerName(Player player) {
         System.out.print("Please enter player name: ");
         player.setPlayerName(scanner.nextLine());
 
@@ -42,13 +44,14 @@ public class Output {
 
     }
 
-    public void displayScoreboard(Player player) {
-        System.out.println(player.getPlayerName() + ": " + player.getAccount());
+    public void displayScoreboard(Player player1, Player player2) {
+        System.out.println(player1.getPlayerName() + ": " + player1.getAccount());
+        System.out.println(player2.getPlayerName() + ": " + player2.getAccount());
 
     }
 
-    public void displayFieldText(Field field[]) {
-        System.out.println(field[1]);
+    public void displayFieldText(String fieldText) {
+        System.out.println(fieldText);
 
     }
 

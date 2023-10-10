@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Game {
     private Player player1 = new Player("");
     private Player player2 = new Player("");
+    private Board board = new Board();
     private Cup cup = new Cup();
     private Output output = new Output();
 
@@ -15,6 +16,10 @@ public class Game {
     public void startGame() {
 
         output.displayRules();
+
+        output.enterPlayerName(player1);
+
+        output.enterPlayerName(player2);
 
         int coinFlip = (int) Math.floor(Math.random() * (2 - 1 + 1) + 1);
         if (coinFlip == 1) {
@@ -28,7 +33,9 @@ public class Game {
 
     public void playGame(Player player1, Player player2) {
         while ((player1.getAccount() < 3000 || player2.getAccount() < 3000)) {
-            if (turnCount % 2 == 0) {
+            if (turnCount % 2 == 0 && (player1.getAccount() >= 3000 || player2.getAccount() >= 3000)) {
+                break;
+            } else if (turnCount % 2 == 0) {
                 output.playerRollDice(player1);
                 scanner.nextLine();
                 playerTurn(player1, cup);
@@ -49,29 +56,29 @@ public class Game {
         if (cup.getRollSum() == 10) {
             extraTurn(player, cup);
         } else {
-            player.setAccount(cup.getRollSum());
+            Field field = board.getField(cup.getRollSum() - 2);
+            output.displayFieldText(field.getDescription());
+            player.setAccount(field.getValue());
         }
 
-        output.displayScoreboard(player1);
-        output.displayScoreboard(player2);
+        output.displayScoreboard(player1, player2);
 
         // Updating number of turns
         turnCount++;
 
-        if (player1.getAccount() >= 3000) {
-            output.winnerGame(player1);
-        } else if (player2.getAccount() >= 3000) {
-            output.winnerGame(player2);
+        if (turnCount % 2 == 0) {
+            if (player1.getAccount() >= 3000) {
+                output.winnerGame(player1);
+            } else if (player2.getAccount() >= 3000) {
+                output.winnerGame(player2);
+            }
         }
+
     }
 
     public void extraTurn(Player player, Cup cup) {
-
-        // Prints out that player gets extra turn if score > 40, because then player
-        // wins instead
-        if (player.getAccount() <= 3000) {
-
-        }
+        Field field = board.getField(cup.getRollSum() - 2);
+        player.setAccount(field.getValue());
         // Substracts one from turncount, so player gets to roll again
         turnCount -= 1;
     }
