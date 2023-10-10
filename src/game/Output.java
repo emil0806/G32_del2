@@ -27,7 +27,8 @@ public class Output {
 
     }
 
-    public void playerStarts() {
+    public void playerRollDice(Player player) {
+        System.out.println(player.getPlayerName() + ", press ENTER to roll dice");
 
     }
 
