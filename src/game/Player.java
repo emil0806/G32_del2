@@ -27,6 +27,7 @@ public class Player {
     }
 
     //
-   public int getAccount() {
-       return this.account.getAmount();
-   }
+    public int getAccount() {
+        return this.account.getAmount();
+    }
+}
