@@ -37,7 +37,8 @@ public class Output {
 
     }
 
-    public void winnerGame() {
+    public void winnerGame(Player player) {
+        System.out.println("Congratulations, " + player.getPlayerName() + " won the game!");
 
     }
 
