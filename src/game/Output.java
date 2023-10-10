@@ -1,6 +1,10 @@
 package game;
 
+import java.util.Scanner;
+
 public class Output {
+
+    private Scanner scanner = new java.util.Scanner(System.in);
 
     public void displayRules() {
         System.out.println("You need to get over 3000 in your balance to win the game");
@@ -9,7 +13,12 @@ public class Output {
 
     }
 
-    public void displayPlayerName() {
+    public void enterPlayerName(Player player) {
+        System.out.println("Press ENTER to start the game");
+        scanner.nextLine();
+
+        System.out.print("Please enter player name: ");
+        player.setPlayerName(scanner.nextLine());
 
     }
 
