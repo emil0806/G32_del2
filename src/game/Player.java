@@ -20,13 +20,13 @@ public class Player {
         return this.name;
     }
 
-    //
+    // Set a player account
     public void setAccount(int amount) {
-        account.setAmount(amount);
+        this.account.setAmount(amount);
 
     }
 
-    //
+    // Get amount in a players account
     public int getAccount() {
         return this.account.getAmount();
     }
