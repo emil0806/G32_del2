@@ -47,7 +47,8 @@ public class Output {
 
     }
 
-    public void displayFieldText() {
+    public void displayFieldText(Field field[]) {
+        System.out.println(field[1]);
 
     }
 
