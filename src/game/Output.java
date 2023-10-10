@@ -42,7 +42,8 @@ public class Output {
 
     }
 
-    public void displayScoreboard() {
+    public void displayScoreboard(Player player) {
+        System.out.println(player.getPlayerName() + ": " + player.getAccount());
 
     }
 
