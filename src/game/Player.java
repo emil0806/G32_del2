@@ -21,10 +21,10 @@ public class Player {
     }
 
     //
-   public void setAccount(int amount) {
-       account.setAmount(int amount);
+    public void setAccount(int amount) {
+        account.setAmount(amount);
 
-   }
+    }
 
     //
    public int getAccount() {
