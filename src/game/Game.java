@@ -94,6 +94,7 @@ public class Game {
     // Control extra turn
     public void extraTurn(Player player, Cup cup) {
         Field field = board.getField(cup.getRollSum() - 2);
+        output.displayFieldText(field.getDescription());
         player.setAccount(field.getValue());
         // Substracts one from turncount, so player gets to roll again
         turnCount -= 1;
