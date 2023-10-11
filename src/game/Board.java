@@ -2,7 +2,7 @@ package game;
 
 public class Board {
 
-    private Field[] fields = new Field[12];
+    private Field[] fields = new Field[11];
 
     public Board() {
         fields[0] = new Field("Tower", "You found Tower seven. The government pays 250 for all your help.", 250);
