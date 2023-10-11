@@ -16,7 +16,7 @@ public class Board {
         fields[6] = new Field("Black cave",
                 "You got bit by a bat, and starts felling sick. The doctor needs 70 bucks to heal you.", -70);
         fields[7] = new Field("Huts in the mountain",
-                "You found a shelter for the night, and somebody left 60 bucks in the shelter.", 60);
+                "You found a shelter for the night, and somebody left 60 bucks for you.", 60);
         fields[8] = new Field("The Werewall",
                 "There is a smell of werewolf, you run so fast, you get a extra turn. But unfortunately you drop 80 bucks in the rush.",
                 -80);
