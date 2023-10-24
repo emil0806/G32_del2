@@ -4,6 +4,7 @@ public class Board {
 
     private Field[] fields = new Field[11];
 
+    //Text displayed when player lands on a certain field
     public Board() {
         fields[0] = new Field("Tower", "You found Tower seven. The government pays 250 for all your help.", 250);
         fields[1] = new Field("Crater", "You fell into the Crater of Doom. You need to pay 100 to respawn.", -100);
@@ -25,6 +26,7 @@ public class Board {
                 "Ouch, you fell over a rock, a rock of gold!!! The pawnshop pay 650 for the gold. ", 650);
     }
 
+    //Returns element from array
     public Field getField(int sum) {
         return fields[sum];
     }
